@@ -4,7 +4,7 @@
 # useful, but WITHOUT ANY WARRANTY; without even the implied 
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-# REV01: Mon 12 Sep 2022 16:00
+# REV01: Mon 12 Sep 2022 17:00
 # START: Mon 28 Sep 2020 21:00
 
 # ATTN:
@@ -96,18 +96,21 @@ rm -f $SHA $SHA.asc
 echo "sha256sum $FILES > $SHA"
 sha256sum $FILES > $SHA
 
+echo "# ################ CHECKSUM ###### #########"
 echo "sha256sum -c $SHA"
 sha256sum -c $SHA
 
+echo "# ################# SIGNING CHECKSUM ######### ######### ########"
 echo "gpg --output $SHA.asc --armor --sign --detach-sign $SHA"
 gpg --output $SHA.asc --armor --sign --detach-sign $SHA
 
+echo "# ################# VERIFY ######### ######### ######### ########"
 echo "gpg --verify $SHA.asc $SHA"
 gpg --verify $SHA.asc $SHA
 
 echo ""
 echo "==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ===="
-echo "==== ==== ==== ATTN: is this WEEK $WEEK ?? ==== ==== ==== ===="
+echo "==== ==== ==== ATTN: is this WEEK $WEEK ?? === ==== ==== ===="
 echo "==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ===="
 echo ""
 

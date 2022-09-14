@@ -4,7 +4,7 @@
 # useful, but WITHOUT ANY WARRANTY; without even the implied 
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-# REV02: Wed 14 Sep 2022 07:00
+# REV02: Wed 14 Sep 2022 08:00
 # REV01: Mon 12 Sep 2022 17:00
 # START: Mon 28 Sep 2020 21:00
 
@@ -16,7 +16,7 @@ REC2="60914D29C01C81F1"
 # ####################### ####### #### ####
 # REC1: public key
 REC1="63FB12B215403B20"
-WEEKURL="http://localhost:4000/WEEK/WEEK.txt"
+# WEEKURL="http://localhost:4000/WEEK/WEEK.txt"
 WEEKURL="https://os.vlsm.org/WEEK/WEEK.txt"
 FILES="my*.asc my*.txt my*.sh"
 SHA="SHA256SUM"

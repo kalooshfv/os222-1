@@ -4,6 +4,7 @@
 # useful, but WITHOUT ANY WARRANTY; without even the implied 
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+# REV02: Wed 14 Sep 2022 07:00
 # REV01: Mon 12 Sep 2022 17:00
 # START: Mon 28 Sep 2020 21:00
 
@@ -15,7 +16,8 @@ REC2="60914D29C01C81F1"
 # ####################### ####### #### ####
 # REC1: public key
 REC1="63FB12B215403B20"
-WEEKURL="https://os.vlsm.org/WEEK/WEEK.txt"
+WEEKURL="http://localhost:5000/WEEK/WEEK.txt"
+# WEEKURL="https://os.vlsm.org/WEEK/WEEK.txt"
 FILES="my*.asc my*.txt my*.sh"
 SHA="SHA256SUM"
 RESDIR="$HOME/RESULT/"
@@ -45,7 +47,7 @@ if [ $DEFAULT ] ; then
     cmd = "date -d " $2 " +%s"
     cmd | getline mydate
     close(cmd)
-    print mydate + (86400 * 7)
+    print mydate + (86400 * 6)
   }'))
   DATE=$(date -d $(date +%d-%b-%Y) +%s)
   for II in ${!intARR[@]} ; do
@@ -57,6 +59,9 @@ fi
 
 (( WEEK > 11 )) && WEEK=11
 WEEK=$(printf "W%2.2d\n" $WEEK)
+
+echo $WEEK
+exit
 
 # Is this the correct WEEK?
 read -r -p "Is this WEEK $WEEK ? [y/N] " response
